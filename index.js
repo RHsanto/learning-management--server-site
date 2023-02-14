@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 require("dotenv").config();
 
-//midalware
+//middleware
 app.use(cors());
 app.use(express.json());
 
@@ -18,12 +18,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   console.log("Hiting the database");
-//   client.close();
-// });
+
 async function run() {
   try {
     await client.connect();
@@ -84,5 +79,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Khul ja sim sim", port);
+  console.log("Shul ja sim sim", port);
 });
